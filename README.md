@@ -28,7 +28,7 @@ Check out the live demo of the app [here](https://jibran-simple-weather-app.netl
 ## Example
 
 1. Enter location: `New York`
-2. Click "Get Weather"
+2. Click "Submit"
 3. The app displays: `The current temperature in New York is 25°C.`
 
 ## API Reference
