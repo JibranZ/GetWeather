@@ -7,10 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // Fetching data
       const response = await fetch(`https://wttr.in/${inputValue}?format=j1`);
       const data = await response.json();
+      const location = data.nearest_area[0].areaName[0].value;
+      const weatherDesc = data.current_condition[0].weatherDesc[0].value;
       const tempF = data.weather[0].avgtempF;
       const tempC = data.weather[0].avgtempC;
-      resultElement.textContent = `${tempF} °F`;
-
+      // resultElement.textContent = `${tempF} °F \n ${location} \n ${weatherDesc}`;
+      resultElement.innerHTML = `${tempF} °F<br>${location}<br>${weatherDesc}`;
       // Button to go back to search for location screen
       const backButton = document.createElement("button");
       backButton.textContent = "Back to Input";
@@ -33,11 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
       let isFahrenheit = true; // Flag to track current temperature scale
       changeDegree.addEventListener("click", function () {
         if (isFahrenheit) {
-          resultElement.textContent = `${tempC} °C`; // Switch to Celsius
+          resultElement.innerHTML = `${tempC} °C<br>${location}<br>${weatherDesc}`;
+
           resultElement.appendChild(changeDegree);
           resultElement.appendChild(backButton);
         } else {
-          resultElement.textContent = `${tempF} °F`; // Switch to Fahrenheit
+          resultElement.innerHTML = `${tempF} °F<br>${location}<br>${weatherDesc}`;
+
           resultElement.appendChild(changeDegree);
           resultElement.appendChild(backButton);
         }
