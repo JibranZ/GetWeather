@@ -10,7 +10,7 @@ Welcome to the Simple Weather App! This application allows you to input a locati
 
 ## Live Demo
 
-Check out the live demo of the app [here]([https://your-netlify-app-link.netlify.app](https://jibran-simple-weather-app.netlify.app/](https://jibran-simple-weather-app.netlify.app/))
+Check out the live demo of the app [here](https://jibran-simple-weather-app.netlify.app/)
 
 ## Installation
 
